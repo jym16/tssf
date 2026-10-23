@@ -21,10 +21,22 @@ x'     = x - (1 - eps_x) * d * n_f                # positional amplitude
 
 ## Install
 
+With [uv](https://docs.astral.sh/uv/), from this directory:
+
 ```bash
-pip install -e .            # numpy + scipy
-pip install -e ".[plot]"    # + matplotlib for plot_network
-pip install -e ".[test]"    # + pytest
+uv sync                     # numpy + scipy
+uv sync --extra plot        # + matplotlib for plot_network
+uv sync --extra test        # + pytest
+uv sync --all-extras        # everything, including jupyter for the examples
+```
+
+`uv sync` creates `.venv/` from the pinned `uv.lock` and installs `tssf` in editable mode.
+Run commands inside it with `uv run`:
+
+```bash
+uv run --extra test pytest                    # test suite
+uv run --extra plot python examples/quickstart.py
+uv run --extra examples jupyter lab examples/tutorial.ipynb
 ```
 
 ## Quick start
