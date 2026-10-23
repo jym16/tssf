@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tssf"
+version = "0.1.0"
+description = "Scale-rich network materials and template-snapped sequential fragmentation (continuous interpolation to line lattices)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+examples = ["matplotlib>=3.5", "jupyter"]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

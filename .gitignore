@@ -1,0 +1,9 @@
+__pycache__/
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+examples/quickstart.png
+examples/network.npz
+experiments/figures/
+experiments/data/
